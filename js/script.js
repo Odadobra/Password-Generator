@@ -96,29 +96,8 @@ let confirmUpperCase;
 
 
 // Function to prompt user for password options
+//Couldn't get this function to work properly so I found another way
 // function getPasswordOptions() {
-
-
-//   let passwordCharacters = []
-
-//   if (confirmSpecialCharacter) {
-//     passwordCharacters = passwordCharacters.concat(specialCharacters)
-//   }
-
-//   if (confirmNumericCharacter) {
-//     passwordCharacters = passwordCharacters.concat(numericCharacters)
-//   }
-
-//   if (confirmLowerCase) {
-//     passwordCharacters = passwordCharacters.concat(lowerCasedCharacters)
-//   }
-
-//   if (confirmUpperCase) {
-//     passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
-//   }
-
-//   console.log(passwordCharacters)
-
 // }
 
 // Function for getting a random element from an array
