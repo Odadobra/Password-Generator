@@ -88,49 +88,107 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-var confirmLength = "";
-var confirmSpecialCharacter;
-var confirmNumericCharacter;
-var confirmLowerCase;
-var confirmUpperCase;
+let confirmLength = "";
+let confirmSpecialCharacter;
+let confirmNumericCharacter;
+let confirmLowerCase;
+let confirmUpperCase;
+
 
 // Function to prompt user for password options
-function getPasswordOptions() {
+// function getPasswordOptions() {
 
-}
+
+//   let passwordCharacters = []
+
+//   if (confirmSpecialCharacter) {
+//     passwordCharacters = passwordCharacters.concat(specialCharacters)
+//   }
+
+//   if (confirmNumericCharacter) {
+//     passwordCharacters = passwordCharacters.concat(numericCharacters)
+//   }
+
+//   if (confirmLowerCase) {
+//     passwordCharacters = passwordCharacters.concat(lowerCasedCharacters)
+//   }
+
+//   if (confirmUpperCase) {
+//     passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
+//   }
+
+//   console.log(passwordCharacters)
+
+// }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom() {
+  let randomPassword = ""
+
+  for (let i = 0; i < confirmLength; i++) {
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    console.log(randomPassword)
+  }
+  return randomPassword;
 
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  var confirmLength = (prompt("How many characters would you like your password to contain?"));
+  let confirmLength = (prompt("How many characters would you like your password to contain?"));
 
   // Loop if answer is outside the parameters 
-  while (confirmLength <= 7 || confirmLength >= 51) {
-    alert("Password length must be between 8-50 characters Try again");
-    var confirmLength = (prompt("How many characters would you like your password to contain?"));
+  while (confirmLength <= 10 || confirmLength >= 64) {
+    alert("Password length must be between 10-64 characters Try again");
+    let confirmLength = (prompt("How many characters would you like your password to contain?"));
   }
 
   // Repeat back how many charactes the user will have  
   alert(`Your password will have ${confirmLength} characters`);
 
   // Determine parameters of password 
-  var confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters");
-  var confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
-  var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
-  var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+  let confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters");
+  let confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
+  let confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+  let confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
   // Loop if answer is outside the parameters 
   while (confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
     alert("You must choose at least one parameter");
-    var confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters");
-    var confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
-    var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
-    var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+    let confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters");
+    let confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
+    let confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+    let confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
 
   }
+  let passwordCharacters = []
+
+  if (confirmSpecialCharacter) {
+    passwordCharacters = passwordCharacters.concat(specialCharacters)
+  }
+
+  if (confirmNumericCharacter) {
+    passwordCharacters = passwordCharacters.concat(numericCharacters)
+  }
+
+  if (confirmLowerCase) {
+    passwordCharacters = passwordCharacters.concat(lowerCasedCharacters)
+  }
+
+  if (confirmUpperCase) {
+    passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
+  }
+
+  console.log(passwordCharacters)
+
+  let randomPassword = ""
+
+  for (let i = 0; i < confirmLength; i++) {
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    console.log(randomPassword)
+  }
+  return randomPassword;
+
+
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
