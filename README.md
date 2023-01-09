@@ -18,6 +18,6 @@ Google
 MIT 
 
 ## Link
+https://odadobra.github.io/Password-Generator/
 
-
-![Screenshot]()
+![Screenshot](./images/Password-Generator.jpg)
